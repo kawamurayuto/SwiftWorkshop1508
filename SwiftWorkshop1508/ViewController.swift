@@ -2,6 +2,8 @@
 //  ViewController.swift
 //  SwiftWorkshop1508
 //
+//  記事一覧を表示
+//
 //  Created by 川村祐人 on 2015/09/16.
 //  Copyright (c) 2015年 ever sense, Inc. All rights reserved.
 //
@@ -10,36 +12,39 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var table: UITableView!
+    @IBAction func back (segue: UIStoryboardSegue) {}
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let appName = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as? String;
-        navBar.topItem?.title = appName
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "reloadData:", name: "query", object: nil)
+        
+        navBar.topItem?.title = Presenter.appName
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func back (segue: UIStoryboardSegue) {
+    
+    func reloadData(notification: NSNotification) {
+        table.reloadData()
     }
     
     func tableView(table: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return PostService.results().count
     }
     
     func tableView(table: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        let post = PostService.results()[indexPath.row];
         let cell = table.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as! UITableViewCell
-        
         let label = table.viewWithTag(1) as! UILabel
-        label.text = "No.\(indexPath.row + 1)"
+        label.text = post.title
         
-        let url = NSURL(string: "http://d3reun7bhr7fny.cloudfront.net/uploads/2015/04/18202119/2-160x160.jpg");
+        let url = NSURL(string: post.image);
         let request = NSURLRequest(URL: url!)
         let imageView = table.viewWithTag(2) as! UIImageView
         
@@ -52,13 +57,9 @@ class ViewController: UIViewController {
     }
     
     func tableView(table: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
-        //indexPath.row
-    performSegueWithIdentifier("gotoBrowserViewController",sender: nil)
+        Presenter.selectedPost = PostService.results()[indexPath.row];
+        performSegueWithIdentifier("gotoBrowserViewController",sender: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "gotoBrowserViewController") {
-        }
-    }
 }
 

@@ -2,6 +2,8 @@
 //  SettingViewController.swift
 //  SwiftWorkshop1508
 //
+//  一覧表示に出す記事を絞り込む
+//
 //  Created by 川村祐人 on 2015/09/16.
 //  Copyright (c) 2015年 ever sense, Inc. All rights reserved.
 //
@@ -11,20 +13,31 @@ import UIKit
 
 class SettingViewController: UIViewController {
     
+    @IBOutlet weak var segueControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        segueControl.selectedSegmentIndex = Presenter.postTypeIndex
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onValueChanged(sender: AnyObject) {
-        var segControl = sender as! UISegmentedControl
-        var index = segControl.selectedSegmentIndex
-        var title = segControl.titleForSegmentAtIndex(index)
-        println(title)
+    override func viewWillDisappear(animated: Bool) {
+        var index = segueControl.selectedSegmentIndex
+        var title = segueControl.titleForSegmentAtIndex(index)!
+        
+        if title == "all" {
+            PostService.query()
+        } else {
+            PostService.query(condition: "type=\(title)") /* @todo プレースホルダーみたいなことしたい */
+        }
+        
+        Presenter.postTypeIndex = index;
+        
+        super.viewDidDisappear(animated)
     }
     
 }

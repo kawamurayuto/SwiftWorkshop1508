@@ -46,7 +46,7 @@
                                                         <constraint firstAttribute="width" secondItem="NI9-1i-0fW" secondAttribute="height" multiplier="1:1" id="hZc-0t-4zl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47z-Io-RpX">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47z-Io-RpX">
                                                     <rect key="frame" x="79" y="8" width="513" height="63.5"/>
                                                     <string key="text">Label
 Label
@@ -57,9 +57,13 @@ Label</string>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="47z-Io-RpX" firstAttribute="top" secondItem="pue-p2-MLT" secondAttribute="topMargin" id="7QN-4A-wfP"/>
+                                                <constraint firstItem="47z-Io-RpX" firstAttribute="bottom" secondItem="pue-p2-MLT" secondAttribute="bottomMargin" id="D0a-Is-6ep"/>
                                                 <constraint firstItem="NI9-1i-0fW" firstAttribute="top" secondItem="pue-p2-MLT" secondAttribute="topMargin" id="D6H-SP-O6b"/>
+                                                <constraint firstItem="47z-Io-RpX" firstAttribute="trailing" secondItem="pue-p2-MLT" secondAttribute="trailingMargin" id="IAv-Cc-hcW"/>
                                                 <constraint firstItem="NI9-1i-0fW" firstAttribute="leading" secondItem="pue-p2-MLT" secondAttribute="leadingMargin" id="LRC-FS-JzN"/>
                                                 <constraint firstItem="NI9-1i-0fW" firstAttribute="bottom" secondItem="pue-p2-MLT" secondAttribute="bottomMargin" id="QhV-Kn-Wag"/>
+                                                <constraint firstItem="47z-Io-RpX" firstAttribute="leading" secondItem="NI9-1i-0fW" secondAttribute="trailing" constant="8" id="SMa-XB-y05"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -125,9 +129,6 @@ Label</string>
                                     <segment title="1"/>
                                     <segment title="2"/>
                                 </segments>
-                                <connections>
-                                    <action selector="onValueChanged:" destination="Ix5-uc-L1d" eventType="valueChanged" id="mwx-EQ-5qj"/>
-                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ng6-lp-wYa">
                                 <rect key="frame" x="283" y="245" width="33.5" height="20.5"/>
@@ -148,6 +149,9 @@ Label</string>
                             <constraint firstAttribute="centerX" secondItem="S3M-Z9-BqW" secondAttribute="centerX" id="yay-HB-l0v"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="segueControl" destination="zkP-K3-OMA" id="mmj-z0-nTv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5G-2S-n9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="l4T-Ch-RUX" userLabel="Exit" sceneMemberID="exit"/>

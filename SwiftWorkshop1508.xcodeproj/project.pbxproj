@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F78A5601BA9BA2100066D22 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78A55F1BA9BA2100066D22 /* PostService.swift */; };
+		2F78A5621BA9C77F00066D22 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78A5611BA9C77F00066D22 /* Post.swift */; };
+		2F78A5641BA9FBEC00066D22 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F78A5631BA9FBEC00066D22 /* Presenter.swift */; };
 		2FBAC71A1BA95B72009B49E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBAC7191BA95B72009B49E0 /* AppDelegate.swift */; };
 		2FBAC71C1BA95B72009B49E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBAC71B1BA95B72009B49E0 /* ViewController.swift */; };
 		2FBAC71F1BA95B72009B49E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FBAC71D1BA95B72009B49E0 /* Main.storyboard */; };
@@ -29,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F78A55F1BA9BA2100066D22 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		2F78A5611BA9C77F00066D22 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2F78A5631BA9FBEC00066D22 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		2FBAC7141BA95B72009B49E0 /* SwiftWorkshop1508.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWorkshop1508.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FBAC7181BA95B72009B49E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FBAC7191BA95B72009B49E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +111,9 @@
 				2FBAC7171BA95B72009B49E0 /* Supporting Files */,
 				2FBAC7391BA95BC7009B49E0 /* SettingViewController.swift */,
 				2FBAC73C1BA96158009B49E0 /* BrowserViewController.swift */,
+				2F78A55F1BA9BA2100066D22 /* PostService.swift */,
+				2F78A5611BA9C77F00066D22 /* Post.swift */,
+				2F78A5631BA9FBEC00066D22 /* Presenter.swift */,
 			);
 			path = SwiftWorkshop1508;
 			sourceTree = "<group>";
@@ -294,8 +303,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FBAC71C1BA95B72009B49E0 /* ViewController.swift in Sources */,
+				2F78A5641BA9FBEC00066D22 /* Presenter.swift in Sources */,
 				2FBAC73D1BA96158009B49E0 /* BrowserViewController.swift in Sources */,
 				2FBAC73A1BA95BC7009B49E0 /* SettingViewController.swift in Sources */,
+				2F78A5621BA9C77F00066D22 /* Post.swift in Sources */,
+				2F78A5601BA9BA2100066D22 /* PostService.swift in Sources */,
 				2FBAC71A1BA95B72009B49E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
