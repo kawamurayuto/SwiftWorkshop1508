@@ -48,6 +48,7 @@ class ViewController: UIViewController {
         let request = NSURLRequest(URL: url!)
         let imageView = table.viewWithTag(2) as! UIImageView
         
+        /* sendAsynchronousRequest は非推奨だが、非同期で画像データを受信してメインスレッドで描画するために使用 */
         NSURLConnection.sendAsynchronousRequest(request, queue:NSOperationQueue.mainQueue()){(res, data, err) in
             let image = UIImage(data:data!)
             imageView.image = image

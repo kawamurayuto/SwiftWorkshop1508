@@ -37,7 +37,7 @@ class SettingViewController: UIViewController {
         
         Presenter.postTypeIndex = index;
         
-        super.viewDidDisappear(animated)
+        super.viewWillDisappear(animated)
     }
     
 }

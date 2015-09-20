@@ -13,9 +13,13 @@ import RealmSwift
 
 class PostService: NSObject {
 
-    private static let realm = try! Realm()
     private static var res: Results<Post>! /* getter にしたい */
     private static var condition:String!
+    private static let config = Realm.Configuration(
+        path: NSBundle.mainBundle().pathForResource("Assets/default", ofType:"realm"),
+        readOnly: true
+    )
+
 
     static func query(condition: String = "") {
         if (self.condition != nil && self.condition == condition) {
@@ -25,14 +29,19 @@ class PostService: NSObject {
         self.condition = condition
         
         /* @todo 可変引数を apply みたいなことがしたい */
-        res = realm.objects(Post)
-        
-        if !condition.isEmpty {
-            res = res.filter(condition)
+        do {
+            let realm = try Realm(configuration: config)
+            res = realm.objects(Post)
+            
+            if !condition.isEmpty {
+                res = res.filter(condition)
+            }
+            
+            let notificationCenter = NSNotificationCenter.defaultCenter()
+            notificationCenter.postNotificationName("query", object: self, userInfo: ["condition": condition])
+        } catch _ {
+            /* @todo エラー処理 */
         }
-        
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.postNotificationName("query", object: self, userInfo: ["condition": condition])
     }
     
     static func results() -> Results<Post> {
