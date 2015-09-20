@@ -26,13 +26,13 @@ class SettingViewController: UIViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        var index = segueControl.selectedSegmentIndex
-        var title = segueControl.titleForSegmentAtIndex(index)!
+        let index = segueControl.selectedSegmentIndex
+        let title = segueControl.titleForSegmentAtIndex(index)!
         
         if title == "all" {
             PostService.query()
         } else {
-            PostService.query(condition: "type=\(title)") /* @todo プレースホルダーみたいなことしたい */
+            PostService.query("type=\(title)") /* @todo プレースホルダーみたいなことしたい */
         }
         
         Presenter.postTypeIndex = index;

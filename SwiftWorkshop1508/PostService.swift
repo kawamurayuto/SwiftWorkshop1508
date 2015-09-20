@@ -13,7 +13,7 @@ import RealmSwift
 
 class PostService: NSObject {
 
-    private static let realm = Realm()
+    private static let realm = try! Realm()
     private static var res: Results<Post>! /* getter にしたい */
     private static var condition:String!
 

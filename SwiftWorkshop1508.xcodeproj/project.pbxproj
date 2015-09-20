@@ -198,11 +198,13 @@
 		2FBAC70C1BA95B72009B49E0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "ever sense, Inc.";
 				TargetAttributes = {
 					2FBAC7131BA95B72009B49E0 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = Y928SJCD92;
 					};
 					2FBAC7281BA95B73009B49E0 = {
 						CreatedOnToolsVersion = 6.4;
@@ -371,6 +373,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -438,8 +441,11 @@
 			baseConfigurationReference = 8AA0AC548FD83E10027F39BA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SwiftWorkshop1508/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.eversense.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SwiftWorkshop1508;
 			};
 			name = Debug;
@@ -449,8 +455,11 @@
 			baseConfigurationReference = AD3671FCB00B453041E09383 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SwiftWorkshop1508/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.eversense.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SwiftWorkshop1508;
 			};
 			name = Release;
@@ -469,6 +478,7 @@
 				);
 				INFOPLIST_FILE = SwiftWorkshop1508Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.eversense.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SwiftWorkshop1508Tests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftWorkshop1508.app/SwiftWorkshop1508";
 			};
@@ -484,6 +494,7 @@
 				);
 				INFOPLIST_FILE = SwiftWorkshop1508Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.eversense.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SwiftWorkshop1508Tests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftWorkshop1508.app/SwiftWorkshop1508";
 			};

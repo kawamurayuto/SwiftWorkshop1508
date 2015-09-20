@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
     func tableView(table: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let post = PostService.results()[indexPath.row];
-        let cell = table.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = table.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath)
         let label = table.viewWithTag(1) as! UILabel
         label.text = post.title
         
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         let imageView = table.viewWithTag(2) as! UIImageView
         
         NSURLConnection.sendAsynchronousRequest(request, queue:NSOperationQueue.mainQueue()){(res, data, err) in
-            let image = UIImage(data:data)
+            let image = UIImage(data:data!)
             imageView.image = image
         }
         
